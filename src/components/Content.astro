@@ -1,12 +1,21 @@
 ---
 import { Markdown } from 'astro/components';
+import Button from './Button.svelte';
+
+
+function showEasterEgg() {
+	window.alert('you found the egg!');
+	console.log('eh?');
+}
 ---
 
 <div class="content">
 	<h1 class="heading">william to</h1>
 	<p class="body">
-		i am a front-end developer with a focus on<br/>
-		efficiency, scalability and accessibility.
+		i am a front-end developer with a
+		<Button onClick={showEasterEgg} client:visible>focus</Button>
+		on<br/>
+		meaningful experience, scalability and accessibility.
 	</p>
 	<ul class="contacts">
 		<li class="contact">
@@ -55,6 +64,7 @@ import { Markdown } from 'astro/components';
 		list-style-type: none;
 		display: flex;
 		column-gap: 40px;
+		padding: 0;
 	}
 
 	.contact {
